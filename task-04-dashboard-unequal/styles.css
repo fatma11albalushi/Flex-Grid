@@ -1,1 +1,82 @@
 /* TODO: build .dashboard with CSS Grid and grid-template-areas to match the mockup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f7f7f8;
+  color: #1a1a1a;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "chart users    sessions"
+    "chart conv     aov";
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.chart-panel  { 
+    grid-area: chart; }
+
+.stat-tile:nth-of-type(2) {
+     grid-area: users; }
+
+.stat-tile:nth-of-type(3)  {
+     grid-area: sessions; }
+
+.stat-tile:nth-of-type(4)  {
+     grid-area: conv; }
+
+.stat-tile:nth-of-type(5) {
+     grid-area: aov; }
+
+ .panel {
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.chart-panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.img-placeholder {
+  height: 164px;
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border-radius: 8px;}
+
+ .stat-tile h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+} 
+.stat-value {
+  margin: 0.25rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "chart    chart"
+      "users    sessions"
+      "conv     aov";
+  }
+}

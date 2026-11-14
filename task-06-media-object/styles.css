@@ -1,1 +1,81 @@
 /* TODO: build .comment with Flexbox to match the mockup */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f8;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 32px 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+
+.avatar {
+  flex: 0 0 96px;          
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a5b4fc, #818cf8);
+}
+.comment-body{
+    flex:1 1 0;
+    min-width: 0;
+}
+.comment-author {
+  margin: 0 0 4px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.comment-text {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+@media (max-width: 600px) {
+  .comment-list {
+    gap: 16px;
+    padding: 24px 16px;
+  }
+  .comment {
+    gap: 16px;
+    padding: 16px;
+  }
+  .avatar {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+  .comment-author {
+    font-size: 1.1rem;
+  }
+
+  .comment-text {
+    font-size: 1rem;
+  }
+}

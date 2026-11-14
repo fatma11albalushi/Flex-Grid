@@ -1,1 +1,68 @@
 /* TODO: build .product-grid with CSS Grid to match the mockup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f7f7f8;
+  color: #1a1a1a;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.15rem;
+  padding: 1.5rem;
+}
+
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.img-placeholder {
+  height: 104px;
+  background: #dbeafe;
+  border-radius: 8px;
+}
+
+.product-name {
+  margin: 0.75rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.product-price {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+
+.product-card button {
+  margin-top: auto;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: #111827;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-card button:hover,
+.product-card button:focus-visible {
+  background: #2563eb;
+}
